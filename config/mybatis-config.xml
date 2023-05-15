@@ -14,4 +14,8 @@
             </dataSource>
         </environment>
     </environments>
+    <mappers>
+        <mapper url="file:mapper/Test01.xml"/>
+        <!--    这里用的是url，也可以使用其他类型，我们会在后面讲解    -->
+    </mappers>
 </configuration>
