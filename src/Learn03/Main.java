@@ -1,6 +1,7 @@
 package Learn03;
 import Learn03.Classes.MybatisUtil;
 import Learn03.Classes.Student;
+import Learn03.Interfaces.delete01;
 import Learn03.Interfaces.insert01;
 import Learn03.Interfaces.select01;
 import org.apache.ibatis.session.SqlSession;
@@ -56,13 +57,39 @@ public class Main {
 //            studentList.forEach(mapper::insertStu);
 //        }
 
-        // 更快的 Batch 方法
+//        // 更快的 Batch 方法
+//        try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
+//            List<Student> studentList = new ArrayList<>();
+//            studentList.add(new Student().setSname("刘思懿").setSsex("女"));
+//            studentList.add(new Student().setSname("谢峰").setSsex("男"));
+//            insert01 mapper = sqlSession.getMapper(insert01.class);
+//            int t = mapper.insertBatch(studentList);
+//            System.out.println(t);  // 返回生效行数
+//        }
+
+//        // delete 一个学生
+//        try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
+//            delete01 mapper = sqlSession.getMapper(delete01.class);
+//            int t = mapper.deleteStu(10);
+//            System.out.println(t);  // 返回生效行数
+//        }
+
+//        // delete 多个学生
+//        try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
+//            List<Integer> studentList = new ArrayList<>();
+//            studentList.add(4);
+//            studentList.add(6);
+//            delete01 mapper = sqlSession.getMapper(delete01.class);
+//            studentList.forEach(mapper::deleteStu);
+//        }
+
+        // 更快的方式
         try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
-            List<Student> studentList = new ArrayList<>();
-            studentList.add(new Student().setSname("刘思懿").setSsex("女"));
-            studentList.add(new Student().setSname("谢峰").setSsex("男"));
-            insert01 mapper = sqlSession.getMapper(insert01.class);
-            int t = mapper.insertBatch(studentList);
+            List<Integer> studentList = new ArrayList<>();
+            studentList.add(15);
+            studentList.add(16);
+            delete01 mapper = sqlSession.getMapper(delete01.class);
+            int t = mapper.deleteStus(studentList);
             System.out.println(t);  // 返回生效行数
         }
 

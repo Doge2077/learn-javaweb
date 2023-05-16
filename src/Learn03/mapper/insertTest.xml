@@ -7,9 +7,9 @@
         INSERT INTO stu(Sname, Ssex) VALUE (#{Sname}, #{Ssex})
     </insert>
     <insert id="insertBatch">
-        INSERT INTO stu(sname, ssex) VALUES
+        INSERT INTO stu(Sname, Ssex) VALUES
         <foreach collection="list" item="item" separator=",">
-            (#{item.sname},#{item.ssex})
+            (#{item.Sname},#{item.Ssex})
         </foreach>
     </insert>
 </mapper>
