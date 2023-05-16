@@ -6,4 +6,10 @@
     <insert id="insertStu" parameterType="Learn03.Classes.Student">
         INSERT INTO stu(Sname, Ssex) VALUE (#{Sname}, #{Ssex})
     </insert>
+    <insert id="insertBatch">
+        INSERT INTO stu(sname, ssex) VALUES
+        <foreach collection="list" item="item" separator=",">
+            (#{item.sname},#{item.ssex})
+        </foreach>
+    </insert>
 </mapper>

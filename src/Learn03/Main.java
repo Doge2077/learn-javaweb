@@ -47,15 +47,24 @@ public class Main {
 //            System.out.println(t);
 //        }
 
-        // insert 多个学生
+//        // insert 多个学生
+//        try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
+//            List<Student> studentList = new ArrayList<>();
+//            studentList.add(new Student().setSname("申明华").setSsex("男"));
+//            studentList.add(new Student().setSname("刘婕").setSsex("女"));
+//            insert01 mapper = sqlSession.getMapper(insert01.class);
+//            studentList.forEach(mapper::insertStu);
+//        }
+
+        // 更快的 Batch 方法
         try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
             List<Student> studentList = new ArrayList<>();
-            studentList.add(new Student().setSname("申明华").setSsex("男"));
-            studentList.add(new Student().setSname("刘婕").setSsex("女"));
+            studentList.add(new Student().setSname("刘思懿").setSsex("女"));
+            studentList.add(new Student().setSname("谢峰").setSsex("男"));
             insert01 mapper = sqlSession.getMapper(insert01.class);
-            studentList.forEach(mapper::insertStu);
+            int t = mapper.insertBatch(studentList);
+            System.out.println(t);  // 返回生效行数
         }
-
 
     }
 }
