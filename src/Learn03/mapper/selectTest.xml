@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Learn03.Interfaces.select01">
+    <select id="selectStu" resultType="Learn03.Classes.Student">
+        SELECT * FROM stu
+    </select>
+    <select id="selectStusid" resultType="Learn03.Classes.Student">
+        SELECT * FROM stu WHERE Sid = #{sid}
+    </select>
+</mapper>

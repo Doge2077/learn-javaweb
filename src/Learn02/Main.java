@@ -22,9 +22,9 @@ public class Main {
             }
 
 //            // 批处理
-//            statement.addBatch("INSERT INTO stu VALUES (1008, '谢坤坤', '男')");
-//            statement.addBatch("INSERT INTO stu VALUES (1009, '王汝成', '男')");
-//            statement.addBatch("INSERT INTO stu VALUES (1010, '杨琳', '女')");
+//            statement.addBatch("INSERT INTO Student VALUES (1008, '谢坤坤', '男')");
+//            statement.addBatch("INSERT INTO Student VALUES (1009, '王汝成', '男')");
+//            statement.addBatch("INSERT INTO Student VALUES (1010, '杨琳', '女')");
 //            statement.executeBatch();  // 一起执行
 
         } catch (SQLException e) {
