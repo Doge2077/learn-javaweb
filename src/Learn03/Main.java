@@ -94,11 +94,19 @@ public class Main {
 //            System.out.println(t);  // 返回生效行数
 //        }
 
-        try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
-            select01 mapper = sqlSession.getMapper(select01.class);
-            Teacher teacher = mapper.getTeacherByTid(2);
-            System.out.println(teacher);
-        }
+//        // 一对多的多表联查  查询一老师 Tid 对应教授的所有学生
+//        try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
+//            select01 mapper = sqlSession.getMapper(select01.class);
+//            Teacher teacher = mapper.getTeacherByTid(2);
+//            System.out.println(teacher);
+//        }
+
+//        // 多对一的多表联查，查询所有学生所对应的老师 假设一个学生只对应一个老师
+//        try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
+//            select01 mapper = sqlSession.getMapper(select01.class);
+//            List<Student> studentList = mapper.getStudent();
+//            studentList.forEach(System.out::println);
+//        }
 
     }
 }

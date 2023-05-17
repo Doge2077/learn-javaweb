@@ -12,4 +12,6 @@ public interface select01 {
 
     Teacher getTeacherByTid(int Sid);
 
+    List<Student> getStudent();
+
 }

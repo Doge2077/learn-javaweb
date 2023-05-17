@@ -8,5 +8,5 @@ import java.util.List;
 public class Teacher {
     Integer Tid;
     String Tname;
-    List<Student> studentList;
+//    List<Student> studentList;  // 查询 一对多关系 时添加
 }

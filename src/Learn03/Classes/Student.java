@@ -12,4 +12,5 @@ public class Student {
     Integer Sid;
     String Sname;
     String Ssex;
+    Teacher teacher;  // 查询 多对一 关系 时添加
 }

@@ -9,21 +9,37 @@
     <select id="selectStusid" resultType="Learn03.Classes.Student">
         SELECT * FROM stu WHERE Sid = #{Sid}
     </select>
-    <!-- 一对多的多表联查  查询一老师 Tid 对应教授的所有学生  -->
-    <select id="getTeacherByTid" resultMap="asTeacher">
-        SELECT stu.*, tea.Tid, tea.Tname
+<!--    &lt;!&ndash; 一对多的多表联查  查询一老师 Tid 对应教授的所有学生  &ndash;&gt;-->
+<!--    <select id="getTeacherByTid" resultMap="asTeacher">-->
+<!--        SELECT stu.*, tea.Tid, tea.Tname-->
+<!--        FROM stu-->
+<!--                 INNER JOIN ts ON stu.Sid = ts.Sid-->
+<!--                 INNER JOIN tea on ts.Tid = tea.Tid-->
+<!--        WHERE ts.Tid = #{Tid}-->
+<!--    </select>-->
+<!--    <resultMap id="asTeacher" type="Learn03.Classes.Teacher">-->
+<!--        <id column="Tid" property="Tid"/>-->
+<!--        <result column="Tname" property="Tname"/>-->
+<!--        <collection property="studentList" ofType="Learn03.Classes.Student">-->
+<!--            <id column="Sid" property="Sid"/>-->
+<!--            <result column="Sname" property="Sname"/>-->
+<!--            <result column="Ssex" property="Ssex"/>-->
+<!--        </collection>-->
+<!--    </resultMap>-->
+    <!-- 多对一的多表联查，查询所有学生所对应的老师 假设一个学生只对应一个老师  -->
+    <select id="getStudent" resultMap="asStudent">
+        SELECT stu.* , tea.*
         FROM stu
-                 INNER JOIN ts ON stu.Sid = ts.Sid
-                 INNER JOIN tea on ts.Tid = tea.Tid
-        WHERE ts.Tid = #{Tid}
+                LEFT JOIN ts ON stu.Sid = ts.Sid
+                LEFT JOIN tea ON ts.Tid = tea.Tid
     </select>
-    <resultMap id="asTeacher" type="Learn03.Classes.Teacher">
-        <id column="Tid" property="Tid"/>
-        <result column="Tname" property="Tname"/>
-        <collection property="studentList" ofType="Learn03.Classes.Student">
-            <id column="Sid" property="Sid"/>
-            <result column="Sname" property="Sname"/>
-            <result column="Ssex" property="Ssex"/>
-        </collection>
+    <resultMap id="asStudent" type="Learn03.Classes.Student">
+        <id column="Sid" property="Sid"/>
+        <result column="Sname" property="Sname"/>
+        <result column="Ssex" property="Ssex"/>
+        <association property="teacher" javaType="Learn03.Classes.Teacher">
+            <id column="Tid" property="Tid"/>
+            <result column="Tname" property="Tname"/>
+        </association>
     </resultMap>
 </mapper>
