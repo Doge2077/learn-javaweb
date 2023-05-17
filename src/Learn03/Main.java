@@ -1,6 +1,7 @@
 package Learn03;
 import Learn03.Classes.MybatisUtil;
 import Learn03.Classes.Student;
+import Learn03.Classes.Teacher;
 import Learn03.Interfaces.delete01;
 import Learn03.Interfaces.insert01;
 import Learn03.Interfaces.select01;
@@ -83,14 +84,20 @@ public class Main {
 //            studentList.forEach(mapper::deleteStu);
 //        }
 
-        // 更快的方式
+//        // 更快的方式
+//        try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
+//            List<Integer> studentList = new ArrayList<>();
+//            studentList.add(15);
+//            studentList.add(16);
+//            delete01 mapper = sqlSession.getMapper(delete01.class);
+//            int t = mapper.deleteStus(studentList);
+//            System.out.println(t);  // 返回生效行数
+//        }
+
         try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
-            List<Integer> studentList = new ArrayList<>();
-            studentList.add(15);
-            studentList.add(16);
-            delete01 mapper = sqlSession.getMapper(delete01.class);
-            int t = mapper.deleteStus(studentList);
-            System.out.println(t);  // 返回生效行数
+            select01 mapper = sqlSession.getMapper(select01.class);
+            Teacher teacher = mapper.getTeacherByTid(2);
+            System.out.println(teacher);
         }
 
     }

@@ -7,19 +7,21 @@
         SELECT * FROM stu
     </select>
     <select id="selectStusid" resultType="Learn03.Classes.Student">
-        SELECT * FROM stu WHERE Sid = #{sid}
+        SELECT * FROM stu WHERE Sid = #{Sid}
     </select>
     <!-- 一对多的多表联查  查询一老师 Tid 对应教授的所有学生  -->
     <select id="getTeacherByTid" resultMap="asTeacher">
-        SELECT *, tea.Tname FROM stu INNER JOIN ts ON stu.Sid = ts.Sid
-                                     INNER JOIN tea t on ts.Tid = t.Tid
-                                     WHERE ts.Tid = #{Tid}
+        SELECT stu.*, tea.Tid, tea.Tname
+        FROM stu
+                 INNER JOIN ts ON stu.Sid = ts.Sid
+                 INNER JOIN tea on ts.Tid = tea.Tid
+        WHERE ts.Tid = #{Tid}
     </select>
-    <resultMap id="asTeacher" type="Teacher">
+    <resultMap id="asTeacher" type="Learn03.Classes.Teacher">
         <id column="Tid" property="Tid"/>
         <result column="Tname" property="Tname"/>
-        <collection property="studentList" ofType="Student">
-            <id property="Sid" column="Sid"/>
+        <collection property="studentList" ofType="Learn03.Classes.Student">
+            <id column="Sid" property="Sid"/>
             <result column="Sname" property="Sname"/>
             <result column="Ssex" property="Ssex"/>
         </collection>
