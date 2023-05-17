@@ -14,4 +14,6 @@ public interface select01 {
 
     List<Student> getStudent();
 
+    List<Student> getStudentInfo();
+
 }

@@ -5,6 +5,7 @@ import Learn03.Classes.Teacher;
 import Learn03.Interfaces.delete01;
 import Learn03.Interfaces.insert01;
 import Learn03.Interfaces.select01;
+import lombok.val;
 import org.apache.ibatis.session.SqlSession;
 
 import java.io.FileNotFoundException;
@@ -107,6 +108,13 @@ public class Main {
 //            List<Student> studentList = mapper.getStudent();
 //            studentList.forEach(System.out::println);
 //        }
+
+        // 多对多的多表联查，查询所有学生的信息以及其老师（一个学生可以有多个老师）
+        try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
+            select01 mapper = sqlSession.getMapper(select01.class);
+            List<Student> studentInfoList = mapper.getStudentInfo();
+            studentInfoList.forEach(System.out::println);
+        }
 
     }
 }
