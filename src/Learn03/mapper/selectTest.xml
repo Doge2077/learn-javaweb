@@ -9,4 +9,19 @@
     <select id="selectStusid" resultType="Learn03.Classes.Student">
         SELECT * FROM stu WHERE Sid = #{sid}
     </select>
+    <!-- 一对多的多表联查  查询一老师 Tid 对应教授的所有学生  -->
+    <select id="getTeacherByTid" resultMap="asTeacher">
+        SELECT *, tea.Tname FROM stu INNER JOIN ts ON stu.Sid = ts.Sid
+                                     INNER JOIN tea t on ts.Tid = t.Tid
+                                     WHERE ts.Tid = #{Tid}
+    </select>
+    <resultMap id="asTeacher" type="Teacher">
+        <id column="Tid" property="Tid"/>
+        <result column="Tname" property="Tname"/>
+        <collection property="studentList" ofType="Student">
+            <id property="Sid" column="Sid"/>
+            <result column="Sname" property="Sname"/>
+            <result column="Ssex" property="Ssex"/>
+        </collection>
+    </resultMap>
 </mapper>
