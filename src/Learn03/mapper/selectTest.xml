@@ -54,8 +54,8 @@
     </select>
     <resultMap id="asInfo" type="Learn03.Classes.Student">
         <id column="Sid" property="Sid"/>
-        <id column="Sname" property="Sname"/>
-        <id column="Ssex" property="Ssex"/>
+        <result column="Sname" property="Sname"/>
+        <result column="Ssex" property="Ssex"/>
         <collection property="teacherList" ofType="Learn03.Classes.Teacher">
             <id column="Tid" property="Tid"/>
             <id column="Tname" property="Tname"/>
