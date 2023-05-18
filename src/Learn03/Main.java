@@ -2,9 +2,7 @@ package Learn03;
 import Learn03.Classes.MybatisUtil;
 import Learn03.Classes.Student;
 import Learn03.Classes.Teacher;
-import Learn03.Interfaces.delete01;
-import Learn03.Interfaces.insert01;
-import Learn03.Interfaces.select01;
+import Learn03.Interfaces.*;
 import lombok.val;
 import org.apache.ibatis.session.SqlSession;
 
@@ -109,12 +107,37 @@ public class Main {
 //            studentList.forEach(System.out::println);
 //        }
 
-        // 多对多的多表联查，查询所有学生的信息以及其老师（一个学生可以有多个老师）
+//        // 多对多的多表联查，查询所有学生的信息以及其老师（一个学生可以有多个老师）
+//        try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
+//            select01 mapper = sqlSession.getMapper(select01.class);
+//            List<Student> studentInfoList = mapper.getStudentInfo();
+//            studentInfoList.forEach(System.out::println);
+//        }
+
+//        // 使用注解 insert02
+//        try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
+//            insert02 mapper = sqlSession.getMapper(insert02.class);
+//            int t = mapper.insertStudent(new Student().setSname("陈芳").setSsex("女"));
+//            System.out.println(t);  // 返回生效行数
+//        }
+
+        // 使用注解 select02
         try (SqlSession sqlSession = MybatisUtil.getSession(true)) {
-            select01 mapper = sqlSession.getMapper(select01.class);
-            List<Student> studentInfoList = mapper.getStudentInfo();
-            studentInfoList.forEach(System.out::println);
+            select02 mapper = sqlSession.getMapper(select02.class);
+//            System.out.println("默认映射规则: " + mapper.getAStudent(2));
+//            System.out.println("自定义映射规则: " + mapper.getOnlyStudent(2));
+//            List<Student> studentList = mapper.getStudentList();  // 查询所有学生信息
+//            studentList.forEach(System.out::println);
+
+//            System.out.println(mapper.getAStudentInfo(2));  // 一对一 查询对应编号的学生信息及其老师信息
+//            List<Student> studentList = mapper.getAllStudentOneInfoList();  // 多对一 查询对应编号的学生信息及其老师信息
+//            studentList.forEach(System.out::println);
+
+//            System.out.println(mapper.getAllStudentInfo(2));  // 一对多 查询对应编号的学生信息及其老师信息
+//            List<Student> studentList = mapper.getAllStudentInfoList();  // 多对多 查询所有学生信息及其老师信息
+//            studentList.forEach(System.out::println);
         }
+
 
     }
 }

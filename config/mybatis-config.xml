@@ -15,9 +15,10 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="Learn03/mapper/selectTest.xml"/>
-        <mapper resource="Learn03/mapper/insertTest.xml"/>
-        <mapper resource="Learn03/mapper/deleteTest.xml"/>
-        <!--    这里用的是url，也可以使用其他类型，我们会在后面讲解    -->
+<!--        <mapper resource="Learn03/mapper/selectTest.xml"/>-->
+<!--        <mapper resource="Learn03/mapper/insertTest.xml"/>-->
+<!--        <mapper resource="Learn03/mapper/deleteTest.xml"/>-->
+        <mapper class="Learn03.Interfaces.insert02"/>
+        <mapper class="Learn03.Interfaces.select02"/>
     </mappers>
 </configuration>
