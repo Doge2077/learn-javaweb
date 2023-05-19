@@ -7,6 +7,10 @@
     <groupId>org.example</groupId>
     <artifactId>Learn_JavaWeb02</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>ChildProject01</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -35,7 +39,7 @@
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
-            <version>3.5.7</version>
+            <version>3.5.13</version>
         </dependency>
     </dependencies>
 
