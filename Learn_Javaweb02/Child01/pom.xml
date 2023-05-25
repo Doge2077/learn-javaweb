@@ -26,6 +26,11 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>Child02</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>
