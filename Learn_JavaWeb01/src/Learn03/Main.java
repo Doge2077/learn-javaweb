@@ -136,7 +136,7 @@ public class Main {
 //            System.out.println(mapper.getAllStudentInfo(2));  // 一对多 查询对应编号的学生信息及其老师信息
 //            List<Student> studentList = mapper.getAllStudentInfoList();  // 多对多 查询所有学生信息及其老师信息
 //            studentList.forEach(System.out::println);
-            System.out.println("Hello git .");
+//            System.out.println("Hello git .");
         }
 
 
