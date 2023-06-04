@@ -1,0 +1,13 @@
+body {
+    text-align: center
+}
+
+input {
+    width: 120px;
+    height: 20px;
+    font-size: 10px;
+}
+
+#div1 {
+    color: hotpink;
+}
