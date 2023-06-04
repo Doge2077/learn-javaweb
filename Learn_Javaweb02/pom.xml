@@ -11,6 +11,7 @@
     <modules>
         <module>Child01</module>
         <module>Child02</module>
+        <module>FrontEnd</module>
     </modules>
 
     <properties>
