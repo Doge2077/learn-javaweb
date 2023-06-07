@@ -32,6 +32,7 @@ body , html {
 
 .login-main-menu {
     background-color: white;
+    box-shadow: 0 0 20px rgb(165, 201, 248);
     width: 350px;
     height: 330px;
     border-radius: 6%;
