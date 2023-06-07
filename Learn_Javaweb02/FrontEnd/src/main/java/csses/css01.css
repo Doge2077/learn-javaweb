@@ -1,5 +1,6 @@
 body {
-    text-align: center
+    text-align: center;
+    margin: 0;
 }
 
 input {
@@ -10,4 +11,36 @@ input {
 
 #div1 {
     color: hotpink;
+}
+
+.css01_blue {
+    color: blue;
+}
+
+#div5, .css01_green {
+    color: red;
+}
+
+#div9 {
+    background: palegreen;
+    width: 300px;
+    height: 300px;
+}
+
+#div10 {
+    background: darkorange;
+    width: 150px;
+    height: 150px;
+}
+
+#div11 {
+    background: palegreen;
+    width: 300px;
+    height: 300px;
+}
+
+#div12 {
+    background: darkorange;
+    width: 50%;
+    height: 50%;
 }
