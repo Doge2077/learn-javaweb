@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="/csses/login.css">
+    <script src="/Js/login.js"></script>
 </head>
 <body>
-<div class="login-root">
+<form class="login-root">
     <div class="login-main-menu">
         <div class="login-main-menu-title">
             <img class="login-main-menu-title-header" src="statics/header.png">
             <h1 class="login-main-menu-title-text">Login to Fxxk</h1>
         </div>
         <div class="login-main-menu-info">
-            <input class="login-main-menu-info-username" type="text" name="sername" placeholder="Username">
+            <label>
+                <input id="login-username" class="login-main-menu-info-base" type="text" name="sername" placeholder="Username">
+            </label>
         </div>
         <div class="login-main-menu-info">
-            <input class="login-main-menu-info-username" type="password" name="password" placeholder="Password">
+            <label>
+                <input id="login-password" class="login-main-menu-info-base" type="password" name="password" placeholder="Password" oninput="checkIllegal(this)" onmouseleave="checkLeave(this)">
+            </label>
         </div>
         <div class="login-main-menu-info">
-            <button class="login-main-menu-info-login" type="button" role="button">LOGIN</button>
+            <label>
+                <button class="login-main-menu-info-login" type="button" role="button" onclick="httpsXhr()">LOGIN</button>
+            </label>
         </div>
     </div>
-</div>
+</form>
 </body>
 </html>

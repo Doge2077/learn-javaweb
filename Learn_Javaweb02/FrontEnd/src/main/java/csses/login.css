@@ -5,7 +5,6 @@
 }
 
 input:focus {
-    outline-style: solid;
     outline-color: #a5c9f8;
 }
 
@@ -63,7 +62,7 @@ body , html {
     justify-content: center;
 }
 
-.login-main-menu-info-username {
+.login-main-menu-info-base {
     margin: 10px;
     border-radius: 12px;
     padding-inline: 10px;
@@ -71,7 +70,6 @@ body , html {
     line-height: 45px;
     border: 0 solid;
     background-color: #f1f3f5;
-    text-outline: none;
 }
 
 .login-main-menu-info-login {
@@ -85,5 +83,16 @@ body , html {
     background-color: #009dff;
     cursor: pointer;
     text-shadow: 1px 1px 1px white;
+}
+
+.login-main-menu-info-error {
+    margin: 10px;
+    border-radius: 12px;
+    padding-inline: 10px;
+    font-size: 20px;
+    line-height: 45px;
+    background-color: #f1f3f5;
+    border: 0 solid;
+    box-shadow: 1px 1px 5px red;
 }
 
