@@ -1,6 +1,7 @@
 package Tools.mappers;
 
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Param;
 
 public interface deleteMapper {
 
@@ -13,6 +14,6 @@ public interface deleteMapper {
     Integer deleteBookByBid(Integer bid);
 
     // 删除一条借阅记录
-    @Delete("DELETE FROM borrow WHERE id = #{id}")
-    Integer deleteBorrowById(Integer id);
+    @Delete("DELETE FROM borrow WHERE sid = #{sid} AND bid = #{bid}")
+    Integer deleteBorrowBySidAndBid(@Param("sid")Integer sid, @Param("bid") Integer bid);
 }

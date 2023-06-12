@@ -48,7 +48,9 @@ public class infoInsert {
                     errorsMenu.existError();
                 }
             }
-            else errorsMenu.matchError();
+            else if (student == null && book != null) errorsMenu.noStudentError();
+            else if (student != null && book == null) errorsMenu.noBookError();
+            else errorsMenu.noMatchError();
         });
     }
 

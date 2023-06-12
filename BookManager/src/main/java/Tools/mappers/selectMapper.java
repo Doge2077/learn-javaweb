@@ -3,6 +3,7 @@ package Tools.mappers;
 import Tools.manage.Book;
 import Tools.manage.Borrow;
 import Tools.manage.Student;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.LinkedList;
@@ -18,8 +19,8 @@ public interface selectMapper {
     Book selectBookByBid(Integer bid);
 
     // 根据借阅编号查找指定借阅记录
-    @Select("SELECT * FROM borrow WHERE id = #{id}")
-    Borrow selectBorrowById(Integer id);
+    @Select("SELECT * FROM borrow WHERE sid = #{sid} AND bid = #{bid}")
+    Borrow selectBorrowBySidAndBid(@Param("sid")Integer sid, @Param("bid") Integer bid);
 
     // 查询所有学生信息
     @Select("SELECT * FROM student")
