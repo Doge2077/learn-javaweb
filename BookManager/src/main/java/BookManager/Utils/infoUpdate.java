@@ -26,12 +26,16 @@ public class infoUpdate {
                 break;
             case 4:
                 updateStuName(sc);
+                break;
             case 5:
                 updateStuSex(sc);
+                break;
             case 6:
                 updateBookName(sc);
+                break;
             case 7:
                 updateBookPrice(sc);
+                break;
             default:
         }
     }

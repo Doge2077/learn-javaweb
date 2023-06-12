@@ -7,12 +7,9 @@ import lombok.EqualsAndHashCode;
 import java.util.LinkedList;
 
 @Data
-@AllArgsConstructor
-@EqualsAndHashCode(callSuper = false)
-public class StudentInfo extends Student{
 
+public class StudentInfo  {
+    int sid;
+    String sname, ssex;
     LinkedList<Book> books;
-    public StudentInfo(Integer sid, String sname, String ssex) {
-        super(sid, sname, ssex);
-    }
 }
