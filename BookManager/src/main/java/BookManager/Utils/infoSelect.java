@@ -40,7 +40,6 @@ public class infoSelect {
         }
     }
 
-
     private static void selectAll() {
         mybatisUtil.selectManage(selectMapper -> {
             LinkedList<StudentInfo> studentinfolist = selectMapper.selectAll();
@@ -102,4 +101,29 @@ public class infoSelect {
             else errorsMenu.emptyError();
         });
     }
+
+    private static void selectOneBook(Scanner sc) {
+        int bid;
+        System.out.print("请输入书籍编号："); bid = checkInput.checkInt(sc);
+        mybatisUtil.selectManage(selectMapper -> {
+            Book book = selectMapper.selectBookByBid(bid);
+            if (book != null) {
+                System.out.println(book);
+            }
+            else errorsMenu.noBookError();
+        });
+    }
+
+    private static void selectOneStu(Scanner sc) {
+        int sid;
+        System.out.print("请输入学生学号："); sid = checkInput.checkInt(sc);
+        mybatisUtil.selectManage(selectMapper -> {
+            Student student = selectMapper.selectStudentBySid(sid);
+            if (student != null) {
+                System.out.println(student);
+            }
+            else errorsMenu.noStudentError();
+        });
+    }
+
 }
