@@ -4,9 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class Student {
     Integer sid;
-    final String sname;
-    final String ssex;
-    final Integer sgrade;
+    String sname, ssex;
 }

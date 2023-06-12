@@ -7,11 +7,11 @@ import org.apache.ibatis.annotations.Insert;
 
 public interface insertMapper {
     // 添加一条学生记录
-    @Insert("INSERT INTO student(sname, ssex, sgrade) VALUES (#{sname}, #{ssex}, #{sgrade})")
+    @Insert("INSERT INTO student(sid, sname, ssex) VALUES (#{sid}, #{sname}, #{ssex})")
     Integer insertStudent(Student student);
 
     // 添加一条书籍记录
-    @Insert("INSERT INTO book(bname, binfo, price) VALUES (#{bname}, #{binfo}, #{price})")
+    @Insert("INSERT INTO book(bid, bname, bprice) VALUES (#{bid}, #{bname}, #{bprice})")
     Integer insertBook(Book book);
 
     // 添加一条借阅记录

@@ -6,6 +6,11 @@ import lombok.Data;
 @Data
 public class Borrow {
     Integer id;
-    final Integer sid;
-    final Integer bid;
+    Integer sid;
+    Integer bid;
+
+    public Borrow(Integer sid, Integer bid) {
+        this.sid = sid;
+        this.bid = bid;
+    }
 }

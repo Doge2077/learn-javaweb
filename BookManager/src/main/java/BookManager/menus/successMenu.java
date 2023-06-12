@@ -1,10 +1,10 @@
 package BookManager.menus;
 
-public class endMenu {
+public class successMenu {
 
     public static void showInfo() {
         System.out.println("=========================");
-        System.out.println("|         数据非法        |");
+        System.out.println("|         操作成功        |");
         System.out.println("=========================");
     }
 }

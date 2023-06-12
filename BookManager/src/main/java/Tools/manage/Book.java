@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class Book {
     Integer bid;
-    final String bname;
-    final String binfo;
-    final Double price;
+    String bname;
+    Double bprice;
 }
