@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class checkInput {
     public static int checkInt(Scanner sc) {
-        int op = -1;
+        int op;
         try {
             op = Integer.parseInt(sc.nextLine());
         } catch (Exception e) {
@@ -14,7 +14,7 @@ public class checkInput {
     }
 
     public static double checkDouble(Scanner sc) {
-        double op = -1;
+        double op;
         try {
             op = Double.parseDouble(sc.nextLine());
         } catch (Exception e) {

@@ -1,8 +1,6 @@
 package Tools.manage;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.util.LinkedList;
 

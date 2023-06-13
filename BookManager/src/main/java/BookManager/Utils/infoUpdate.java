@@ -48,9 +48,7 @@ public class infoUpdate {
             if (book != null) {
                 double price;
                 System.out.print("请输入书籍价格："); price = checkInput.checkDouble(sc);
-                mybatisUtil.updateManage(updateMapper -> {
-                    updateMapper.updateBookPrice(bid, price);
-                });
+                mybatisUtil.updateManage(updateMapper -> updateMapper.updateBookPrice(bid, price));
                 successMenu.showInfo();
             }
             else errorsMenu.noBookError();
@@ -65,9 +63,7 @@ public class infoUpdate {
             if (book != null) {
                 String name;
                 System.out.print("请输入书籍名称："); name = sc.nextLine();
-                mybatisUtil.updateManage(updateMapper -> {
-                    updateMapper.updateBookName(bid, name);
-                });
+                mybatisUtil.updateManage(updateMapper -> updateMapper.updateBookName(bid, name));
                 successMenu.showInfo();
             }
             else errorsMenu.noBookError();
@@ -82,9 +78,7 @@ public class infoUpdate {
             if (student != null) {
                 String sex;
                 System.out.print("请输入学生性别："); sex = sc.nextLine();
-                mybatisUtil.updateManage(updateMapper -> {
-                    updateMapper.updateStudentSex(sid, sex);
-                });
+                mybatisUtil.updateManage(updateMapper -> updateMapper.updateStudentSex(sid, sex));
                 successMenu.showInfo();
             }
             else errorsMenu.noStudentError();
@@ -99,9 +93,7 @@ public class infoUpdate {
             if (student != null) {
                 String name;
                 System.out.print("请输入学生姓名："); name = sc.nextLine();
-                mybatisUtil.updateManage(updateMapper -> {
-                    updateMapper.updateStudentName(sid, name);
-                });
+                mybatisUtil.updateManage(updateMapper -> updateMapper.updateStudentName(sid, name));
                 successMenu.showInfo();
             }
             else errorsMenu.noStudentError();
@@ -115,9 +107,7 @@ public class infoUpdate {
         mybatisUtil.selectManage(selectMapper -> {
             Borrow borrow = selectMapper.selectBorrowBySidAndBid(sid, bid);
             if (borrow != null) {
-                mybatisUtil.deleteManage(deleteMapper -> {
-                    deleteMapper.deleteBorrowBySidAndBid(sid, bid);
-                });
+                mybatisUtil.deleteManage(deleteMapper -> deleteMapper.deleteBorrowBySidAndBid(sid, bid));
                 successMenu.showInfo();
             }
             else errorsMenu.noMatchError();
@@ -130,9 +120,7 @@ public class infoUpdate {
         mybatisUtil.selectManage(selectMapper -> {
             Book book = selectMapper.selectBookByBid(bid);
             if (book != null) {
-                mybatisUtil.deleteManage(deleteMapper -> {
-                    deleteMapper.deleteBookByBid(bid);
-                });
+                mybatisUtil.deleteManage(deleteMapper -> deleteMapper.deleteBookByBid(bid));
                 successMenu.showInfo();
             }
             else errorsMenu.noBookError();
@@ -145,9 +133,7 @@ public class infoUpdate {
         mybatisUtil.selectManage(selectMapper -> {
             Student student = selectMapper.selectStudentBySid(sid);
             if (student != null) {
-                mybatisUtil.deleteManage(deleteMapper -> {
-                    deleteMapper.deleteStudnetBySid(sid);
-                });
+                mybatisUtil.deleteManage(deleteMapper -> deleteMapper.deleteStudnetBySid(sid));
                 successMenu.showInfo();
             }
             else errorsMenu.noStudentError();

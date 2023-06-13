@@ -1,6 +1,5 @@
 package Tools.manage;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data

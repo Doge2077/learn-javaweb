@@ -33,7 +33,6 @@ public class infoInsert {
         System.out.print("请输入学生学号："); sid = checkInput.checkInt(sc);
         System.out.print("请输入书籍编号："); bid = checkInput.checkInt(sc);
         Borrow borrow = new Borrow(sid, bid);
-        boolean flag = false;
         mybatisUtil.selectManage(out_mapper -> {
             Student student = out_mapper.selectStudentBySid(sid);
             Book book = out_mapper.selectBookByBid(bid);
