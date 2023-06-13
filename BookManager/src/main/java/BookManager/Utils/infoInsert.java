@@ -31,7 +31,15 @@ public class infoInsert {
     private static void insertBorr(Scanner sc) {
         int sid, bid;
         System.out.print("请输入学生学号："); sid = checkInput.checkInt(sc);
+        if (sid <= 0) {
+            errorsMenu.dataError();
+            return ;
+        }
         System.out.print("请输入书籍编号："); bid = checkInput.checkInt(sc);
+        if (bid <= 0) {
+            errorsMenu.dataError();
+            return ;
+        }
         Borrow borrow = new Borrow(sid, bid);
         mybatisUtil.selectManage(out_mapper -> {
             Student student = out_mapper.selectStudentBySid(sid);
@@ -58,6 +66,17 @@ public class infoInsert {
         String name;
         double bprice;
         System.out.print("请输入书籍编号："); bid = checkInput.checkInt(sc);
+        if (bid <= 0) {
+            errorsMenu.dataError();
+            return ;
+        }
+        mybatisUtil.selectManage(selectMapper -> {
+            Book book = selectMapper.selectBookByBid(bid);
+            if (book != null) {
+                errorsMenu.existError();
+                return ;
+            }
+        });
         System.out.print("请输入书籍名称："); name = sc.nextLine();
         System.out.print("请输入书籍价格："); bprice = checkInput.checkDouble(sc);
         Book book = new Book(bid, name, bprice);
@@ -76,6 +95,17 @@ public class infoInsert {
         int sid;
         String name, sex;
         System.out.print("请输入学生学号："); sid = checkInput.checkInt(sc);
+        if (sid <= 0) {
+            errorsMenu.dataError();
+            return ;
+        }
+        mybatisUtil.selectManage(selectMapper -> {
+            Student student = selectMapper.selectStudentBySid(sid);
+            if (student != null) {
+                errorsMenu.existError();
+                return ;
+            }
+        });
         System.out.print("请输入学生姓名："); name = sc.nextLine();
         System.out.print("请输入学生性别："); sex = sc.nextLine();
         Student student = new Student(sid, name, sex);
