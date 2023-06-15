@@ -10,8 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5c4f255-7e0f-4a2d-8732-94c7150982f4" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/../Learn_Javaweb02/FrontEnd/src/main/java/Htmls/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Learn_Javaweb02/FrontEnd/src/main/java/Htmls/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LitBook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LitBook/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/learn_javaweb03/testServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -169,7 +173,7 @@
       <updated>1686812173146</updated>
       <workItem from="1686812174750" duration="1798000" />
       <workItem from="1686813988760" duration="737000" />
-      <workItem from="1686814737789" duration="6185000" />
+      <workItem from="1686814737789" duration="17671000" />
     </task>
     <servers />
   </component>
