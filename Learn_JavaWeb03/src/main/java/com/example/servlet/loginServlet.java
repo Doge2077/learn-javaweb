@@ -50,7 +50,7 @@ public class loginServlet extends HttpServlet {
                 userMapper usermapper = sqlSession.getMapper(userMapper.class);
                 User user = usermapper.getUser(username, password);
                 if (user != null) {
-                    resp.getWriter().write("Login !");
+                    resp.sendRedirect("download");
                 } else {
                     resp.getWriter().write("Oops !");
                 }

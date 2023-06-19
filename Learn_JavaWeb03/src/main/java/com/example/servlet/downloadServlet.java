@@ -24,7 +24,9 @@ public class downloadServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
-        resp.getWriter().write("Download!");
+        OutputStream outputStream = resp.getOutputStream();
+        InputStream inputStream = Resources.getResourceAsStream("/header.png");
+        resp.getWriter().write(inputStream.toString());
         //        resp.setContentType("image/png");
 //        OutputStream outputStream = resp.getOutputStream();
 //        InputStream inputStream = Resources.getResourceAsStream("header.png");
