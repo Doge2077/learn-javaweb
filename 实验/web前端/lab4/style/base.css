@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+}
+
+body {
+    font-family: "微软雅黑";
+    font-size: 16px;
+}
+
+.head {
+    width: 980px;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 100px;
+    top: 15px;
+}
+
+.login {
+    position: absolute;
+    right: 100px;
+    top: 34px;
+    color: #ff9c00;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.nav {
+    width: 100%;
+    height: 50px;
+    background: #ff9c00;
+}
+
+.nav_in {
+    width: 820px;
+    margin: 0 auto;
+    line-height: 50px;
+    color: #fff;
+    padding-left: 160px;
+}
+
+.nav_in span {
+    float: left;
+    padding: 0 38px;
+    color: #9c5132;
+    cursor: pointer;
+}
+
+.banner {
+    text-align: center;
+    height: 494px;
+}
+
+.list {
+    width: 100%;
+    height: 240px;
+    background: #e7bf80;
+}
+
+.list .list_in {
+    width: 940px;
+    height: 195px;
+    margin: 0 auto;
+    padding: 45px 0 0 40px;
+}
+
+.list .list_in div {
+    float: left;
+    width: 146px;
+    height: 55px;
+    padding-top: 95px;
+    margin-right: 42px;
+    background: url("../static/images/list1.png") no-repeat;
+    text-align: center;
+    collor: #9c5132;
+}
+
+.list .list_in .list2 {
+    background: url("../static/images/list2.png") no-repeat;
+}
+
+.list .list_in .list3 {
+    background: url("../static/images/list3.png") no-repeat;
+}
+
+.list .list_in .list4 {
+    background: url("../static/images/list4.png") no-repeat;
+}
+
+.list .list_in .list5 {
+    background: url("../static/images/list5.png") no-repeat;
+}
+
+.content {
+    width: 100%;
+    height: 570px;
+    background: #f8f5bc;
+}
+
+.con {
+    width: 912px;
+    height: 530px;
+    margin: 0 auto;
+    padding: 40px 0 0 68px;
+}
+
+.con .con_type {
+    width: 180px;
+    height: 220px;
+    border: 1px solid #ccc;
+    float: left;
+    background: #fff;
+    margin: 0 39px 30px 0;
+    font-size: 14px;
+    color: #9c5132;
+}
+
+.con .con_type span {
+    display: block;
+    padding: 2px 0 0 16px;
+}
+
+.con .con_type span.con_name {
+    color: #fd8187;
+}
+
+.con .con_type span b {
+    font-weight: normal;
+    color: #fd8187;
+}
+
+.con .con_type img {
+    margin: 12px 12px 3px 12px;
+    width:158px;
+    height:122px;
+}
+
+.footer {
+    position: relative;
+    top: -8px;
+    width: 100%;
+    height: 120px;
+    background: url("../static/images/footer.png") repeat-x;
+    text-align: center;
+    line-height: 120px;
+    color: #fff;
+    font-size: 18px;
+}
+
+
+
+
